@@ -74,5 +74,16 @@ class RestaurantTest {
 
 
     // C3_Project Part 3: Adding a Feature using TDD
+    @Test
+    public void when_selecting_items_in_menu_total_order_value_should_be_returned(){
+        itemList = restaurant.getMenu();
+        assertEquals(388, restaurant.orderValue(itemList));
+    }
+
+    @Test
+    public void when_no_items_were_selected_in_menu_total_order_value_should_be_zero(){
+        double totalValue = restaurant.orderValue(itemList);
+        assertEquals(0, totalValue);
+    }
 
 }

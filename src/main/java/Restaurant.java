@@ -66,6 +66,15 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+	
+	public int orderValue(List<Item> itemsList){
+        int orderTotal = 0;
+
+        for (Item itemName : itemsList) {
+            orderTotal += itemName.getPrice();
+        }
+        return orderTotal;
+    }
 
 
 
